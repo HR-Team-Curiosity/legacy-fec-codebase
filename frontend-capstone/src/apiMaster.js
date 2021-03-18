@@ -72,7 +72,7 @@ const addToCart = (user_token, sku_id) => {
 };
 
 const getSpecificAnswers = (questionId) => {
-  return axios.get(`${url}/qa/${questionId}/answers`);
+  return axios.get(`http://localhost:3000/qa/${questionId}/answers`);
 };
 
 const askQuestion = (id, text, name, email) => {
