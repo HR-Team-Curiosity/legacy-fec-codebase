@@ -76,7 +76,7 @@ const getSpecificAnswers = (questionId) => {
 };
 
 const askQuestion = (id, text, name, email) => {
-  return axios.post(`${url}/qa/${id}`, {
+  return axios.post(`http://localhost:3000/qa/${id}`, {
     body: text,
     name: name,
     email: email,
@@ -84,7 +84,7 @@ const askQuestion = (id, text, name, email) => {
 };
 
 const answerQuestion = (questionId, text, name, email, photos = []) => {
-  return axios.post(`${url}/qa/${questionId}/answers`, {
+  return axios.post(`http://localhost:3000/qa/${questionId}/answers`, {
     body: text,
     name: name,
     email: email,
@@ -93,11 +93,11 @@ const answerQuestion = (questionId, text, name, email, photos = []) => {
 };
 
 const markQAsHelpful = (questionId) => {
-  return axios.put(`${url}/qa/question/${questionId}/helpful`);
+  return axios.put(`http://localhost:3000/qa/question/${questionId}/helpful`);
 };
 
 const reportQuestion = (questionId) => {
-  return axios.put(`${url}/qa/question/${questionId}/report`);
+  return axios.put(`http://localhost:3000/qa/question/${questionId}/report`);
 };
 
 const markAnsAsHelpful = (answerID) => {
