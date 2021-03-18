@@ -18,7 +18,7 @@ const getRelatedProducts = (id = 1) => {
 };
 
 const getQA = (id = 1) => {
-  return axios.get(`${url}/qa/${id}`);
+  return axios.get(`http://localhost:3000/qa/${id}`);
 };
 
 const getReviewMetaData = (id = 1) => {
