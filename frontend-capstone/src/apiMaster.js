@@ -18,7 +18,7 @@ const getRelatedProducts = (id = 1) => {
 };
 
 const getQA = (id = 1) => {
-  return axios.get(`http://localhost:3000/qa/${id}`);
+  return axios.get(`http://http://18.210.13.63:3000/qa/${id}`);
 };
 
 const getReviewMetaData = (id = 1) => {
@@ -72,11 +72,11 @@ const addToCart = (user_token, sku_id) => {
 };
 
 const getSpecificAnswers = (questionId) => {
-  return axios.get(`http://localhost:3000/qa/${questionId}/answers`);
+  return axios.get(`http://18.210.13.63:3000/qa/${questionId}/answers`);
 };
 
 const askQuestion = (id, text, name, email) => {
-  return axios.post(`http://localhost:3000/qa/${id}`, {
+  return axios.post(`http://18.210.13.63:3000/qa/${id}`, {
     body: text,
     name: name,
     email: email,
@@ -84,7 +84,7 @@ const askQuestion = (id, text, name, email) => {
 };
 
 const answerQuestion = (questionId, text, name, email, photos = []) => {
-  return axios.post(`http://localhost:3000/qa/${questionId}/answers`, {
+  return axios.post(`http://18.210.13.63:3000/qa/${questionId}/answers`, {
     body: text,
     name: name,
     email: email,
@@ -93,19 +93,21 @@ const answerQuestion = (questionId, text, name, email, photos = []) => {
 };
 
 const markQAsHelpful = (questionId) => {
-  return axios.put(`http://localhost:3000/qa/question/${questionId}/helpful`);
+  return axios.put(
+    `http://18.210.13.63:3000/qa/question/${questionId}/helpful`
+  );
 };
 
 const reportQuestion = (questionId) => {
-  return axios.put(`http://localhost:3000/qa/question/${questionId}/report`);
+  return axios.put(`http://18.210.13.63:3000/qa/question/${questionId}/report`);
 };
 
 const markAnsAsHelpful = (answerID) => {
-  return axios.put(`${url}/qa/answer/${answerID}/helpful`);
+  return axios.put(`http://18.210.13.63:3000/qa/answer/${answerID}/helpful`);
 };
 
 const reportAns = (answerID) => {
-  return axios.put(`${url}/qa/answer/${answerID}/report`);
+  return axios.put(`http://18.210.13.63:3000/qa/answer/${answerID}/report`);
 };
 
 const apiMaster = {
