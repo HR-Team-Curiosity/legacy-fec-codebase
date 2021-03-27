@@ -1,5 +1,6 @@
 import axios from "axios";
 const url = "http://18.224.200.47";
+const localhostUrl = "http://127.0.0.1:8080";
 
 const getProductList = () => {
   return axios.get(`${url}/products`);
@@ -25,9 +26,15 @@ const getReviewMetaData = (id = 1) => {
   return axios.get(`${url}/reviews/${id}/meta`);
 };
 
+// const getReviewsOfProduct = (id = 1, sortString = "relevant", count = 20) => {
+//   return axios.get(
+//     `${url}/reviews/${id}/list?sort=${sortString}:asc&count=${count}}`
+//   );
+// };
+
 const getReviewsOfProduct = (id = 1, sortString = "relevant", count = 20) => {
   return axios.get(
-    `${url}/reviews/${id}/list?sort=${sortString}:asc&count=${count}}`
+    `${localhostUrl}/reviews/${id}/list?sort=${sortString}:asc&count=${count}`
   );
 };
 
@@ -35,6 +42,28 @@ const reportReview = (reviewId) => {
   return axios.put(`${url}/reviews/report/${reviewId}`);
 };
 
+// const postReview = (
+//   id = 1,
+//   rating,
+//   summary,
+//   body,
+//   recommend,
+//   name,
+//   email,
+//   photos,
+//   characteristics
+// ) => {
+//   return axios.post(`${url}/reviews/${id}`, {
+//     rating: rating,
+//     summary: summary,
+//     body: body,
+//     recommend: recommend,
+//     name: name,
+//     email: email,
+//     photos: photos,
+//     characteristics: characteristics,
+//   });
+// };
 const postReview = (
   id = 1,
   rating,
@@ -46,7 +75,7 @@ const postReview = (
   photos,
   characteristics
 ) => {
-  return axios.post(`${url}/reviews/${id}`, {
+  return axios.post(`${localhostUrl}/reviews/${id}`, {
     rating: rating,
     summary: summary,
     body: body,
